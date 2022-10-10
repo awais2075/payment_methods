@@ -2,18 +2,16 @@ package com.payment.methods.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
-@Table(name = "payment_method", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "display_name", "payment_type"}))
+@Table(name = "payment_method")
 public class PaymentMethod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "name", nullable = false/*, unique = true*/)
+    @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "display_name", nullable = false)
     private String displayName;
